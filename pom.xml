@@ -21,7 +21,7 @@
 	<organization>
 		<name>nanohttpd</name>
 	</organization>
-	<distributionManagement>
+	<!-- <distributionManagement>
 		<repository>
 			<id>sonatype-nexus-staging</id>
 			<name>nanohttpd sonytype Maven 2 repository</name>
@@ -37,7 +37,7 @@
 			<name>private Project Site</name>
 			<url>scp://nanohttpd.org:33333/home/nanohttpd/public_html</url>
 		</site>
-	</distributionManagement>
+	</distributionManagement> -->
 	<inceptionYear>2012</inceptionYear>
 	<developers>
 		<developer>
