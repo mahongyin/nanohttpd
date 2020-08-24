@@ -9,7 +9,7 @@
 	<artifactId>nanohttpd</artifactId>
 	<distributionManagement>
 		<relocation>
-			<groupId>org.nanohttpd</groupId>
+			<groupId>com.gitee.l0km</groupId>
 		</relocation>
 	</distributionManagement>
 </project>
