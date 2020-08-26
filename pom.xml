@@ -531,6 +531,8 @@
 		</profile>
 	</profiles>
 	<properties>
+		<maven.compiler.source>1.7</maven.compiler.source>      
+		<maven.compiler.target>1.7</maven.compiler.target>
 		<minimal.coverage>0.77</minimal.coverage>
 		<skipTests>true</skipTests>
 	</properties>
