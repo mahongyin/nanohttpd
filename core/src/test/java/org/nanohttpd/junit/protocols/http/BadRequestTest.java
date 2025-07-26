@@ -33,6 +33,7 @@ package org.nanohttpd.junit.protocols.http;
  * #L%
  */
 
+import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
@@ -63,6 +64,19 @@ public class BadRequestTest extends HttpServerTest {
         ByteArrayOutputStream outputStream = invokeServer("GET");
         String[] expected = new String[]{
             "HTTP/1.1 400 Bad Request"
+        };
+        assertResponse(outputStream, expected);
+    }
+
+    @Test
+    public void testTooLargerURI() throws IOException {
+        StringBuilder request = new StringBuilder("GET http://example.com HTTP/1.1\r\n");
+        for(int i = 0; i < 1000; i++){
+            request.append("header"+i+": abcdefghijklmnopqrstuvwxyz\r\n");
+        }
+        ByteArrayOutputStream outputStream = invokeServer(request.toString());
+        String[] expected = new String[]{
+                "HTTP/1.1 400 Bad Request"
         };
         assertResponse(outputStream, expected);
     }
