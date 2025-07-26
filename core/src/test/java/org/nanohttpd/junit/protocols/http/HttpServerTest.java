@@ -47,6 +47,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.util.Collections;
 import java.io.StringReader;
 import java.net.InetAddress;
 import java.util.ArrayList;
@@ -230,7 +231,9 @@ public class HttpServerTest {
 
                     try {
                         session.parseBody(this.files);
-                        for (String key : files.keySet()) {
+                        List<String> keyList = new ArrayList<>(files.keySet());
+                        Collections.sort(keyList);
+                        for (String key : keyList) {
                             responseMsg.append(key);
                         }
                     } catch (Exception e) {
