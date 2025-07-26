@@ -8,8 +8,8 @@ dependencies {
 	
 	testCompile project(':nanohttpd')
 	testCompile group: 'javax.servlet', name: 'servlet-api', version: '2.5'
-	testCompile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.4.1'
-	testCompile group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.4.1'
+	testCompile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.13'
+	testCompile group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.5.13'
 }
 
 task wrapper(type: Wrapper) {
