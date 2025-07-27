@@ -3,7 +3,7 @@ allprojects {
 	apply plugin: 'idea'
 	
 	group = 'org.nanohttpd'
-	version = '2.3.2-SNAPSHOT'
+	version = '2.3.5-SNAPSHOT'
 }
 
 subprojects {
@@ -12,6 +12,7 @@ subprojects {
 	targetCompatibility = 1.7
 	
 	repositories {
+		mavenCentral()
 		jcenter()
 	}
 	
