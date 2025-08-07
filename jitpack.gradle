@@ -1,0 +1,37 @@
+//apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'maven-publish'//jitpack
+
+/*****************jitpack***************/
+def VERSION_NAME = rootProject.ext.publish.version// 版本
+def GROUP_ID = 'com.gitee.mahongyin'
+def ARTIFACT_ID = "nanohttp"
+group = GROUP_ID
+version = VERSION_NAME
+task androidSourcesJar(type: Jar) {
+    archiveClassifier.set("sources")
+    // 源码路径，包含Java、kotlin代码
+    from android.sourceSets.main.java.getSrcDirs()
+    exclude "**/R.class"
+    exclude "**/BuildConfig.class"
+}
+
+afterEvaluate {
+    publishing {
+//        singleVariant("release")
+        publications {
+            release(MavenPublication) {
+                from components.java
+                groupId = GROUP_ID
+                artifactId = ARTIFACT_ID
+                version = VERSION_NAME
+                artifact androidSourcesJar
+            }
+        }
+        repositories {
+            maven {
+                url = "../repo"
+            }
+        }
+    }
+}
+//lib模块目录./gradlew publish

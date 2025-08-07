@@ -5,17 +5,17 @@
 		<artifactId>oss-parent</artifactId>
 		<version>7</version>
 	</parent>
-	<groupId>com.gitee.l0km</groupId>
-	<artifactId>nanohttpd-project</artifactId>
+	<groupId>com.gitee.mahongyin</groupId>
+	<artifactId>nanohttpd</artifactId>
 	<version>2.3.5-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>NanoHttpd-Project</name>
 	<description>NanoHttpd is a light-weight HTTP server designed for embedding in other applications.</description>
 	<url>http://www.nanohttpd.org</url>
 	<scm>
-		<connection>scm:git:https://gitee.com/l0km/nanohttpd.git</connection>
-		<developerConnection>scm:git:https://gitee.com/l0km/nanohttpd.git</developerConnection>
-		<url>https://gitee.com/l0km/nanohttpd</url>
+		<connection>scm:git:https://gitee.com/mahongyin/nanohttpd.git</connection>
+		<developerConnection>scm:git:https://gitee.com/mahongyin/nanohttpd.git</developerConnection>
+		<url>https://gitee.com/mahongyin/nanohttpd</url>
 		<tag>HEAD</tag>
 	</scm>
 	<organization>

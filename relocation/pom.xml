@@ -17,7 +17,7 @@
 			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
 		</repository>
 		<relocation>
-			<groupId>com.gitee.l0km</groupId>
+			<groupId>com.gitee.mahongyin</groupId>
 		</relocation>
 	</distributionManagement>
 	<build>
