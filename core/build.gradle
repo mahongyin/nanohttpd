@@ -1,3 +1,4 @@
+
 description = 'NanoHttpd-Core'
 
 dependencies {
@@ -5,11 +6,8 @@ dependencies {
 	testCompile group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.5.13'
 }
 
-task wrapper(type: Wrapper) {
-	gradleVersion = "4.4.1"
-}
+
 
 //apply from: "../upload.gradle"
-//apply from: "../jitpack.gradle"
-//发布到artifactory
 apply from: "../artifactory.gradle"
+//apply from: "../jitpack.gradle"

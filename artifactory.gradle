@@ -2,13 +2,22 @@ apply plugin: 'maven-publish'
 
 def VERSION_NAME = "0.0.1"// 版本
 
+javadoc {
+    options.addStringOption("charset", "UTF-8")
+    if (JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption('html5', true)
+    }
+}
+
 //远程发布， 发布到我自己的私有库
 afterEvaluate {
     publishing {
         publications {
             maven(MavenPublication) {
+                //from javadoc.destinationDir
+                //from sourceSets.main.allSource
                 from components.java
-//                artifact androidSourcesJar //打包源码，去除这行打的包将看不到源码
+
                 groupId = "io.github.mahongyin.${rootProject.projectDir.name}"
                 artifactId = projectDir.name
                 version = VERSION_NAME
@@ -18,18 +27,13 @@ afterEvaluate {
 
         repositories {
             maven {
-                name 'mavenCentral'
-                url "$mavenReleasesUrl"
-                credentials {
-                    username mavenCentralUsername
-                    password mavenCentralPassword
-                }
+                //name 'mavenCentral'
+                url "./repo"//"https://ossrh-staging-api.central.sonatype.com/service/local/staging/deploy/maven2/"
+//                credentials {
+//                    username mavenCentralUsername
+//                    password mavenCentralPassword
+//                }
             }
         }
     }
-}
-// 用于打包源代码的任务
-task androidSourcesJar(type: Jar) {
-    //from sourceSets.main.java.sourceFiles //仅Java源码
-    from sourceSets.main.java.srcDirs //包括Java和Kotlin源码和资源
 }

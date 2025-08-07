@@ -8,7 +8,7 @@ def ARTIFACT_ID = "nanohttp"
 group = GROUP_ID
 version = VERSION_NAME
 task androidSourcesJar(type: Jar) {
-    archiveClassifier.set("sources")
+      //archiveClassifier.set("sources")
     // 源码路径，包含Java、kotlin代码
     from android.sourceSets.main.java.getSrcDirs()
     exclude "**/R.class"
