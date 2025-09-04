@@ -55,7 +55,8 @@ public enum Method {
     LOCK,
     UNLOCK,
     NOTIFY,
-    SUBSCRIBE;
+    SUBSCRIBE,
+    UNSUBSCRIBE;
 
     public static Method lookup(String method) {
         if (method == null)
